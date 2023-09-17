@@ -1,0 +1,228 @@
+CREATE DATABASE Prison;
+USE Prison;
+
+
+CREATE TABLE Admin(
+                      UserName VARCHAR(15) NOT NULL,
+                      Password VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE Building(
+                         BuildNO VARCHAR(10) NOT NULL,
+                         Cells INT(5),
+                         Type VARCHAR(10) NOT NULL,
+                         Level VARCHAR(10) NOT NULL,
+                         CONSTRAINT PRIMARY KEY (BuildNO)
+
+);
+
+CREATE TABLE Cases(
+                      CaseID VARCHAR(10) NOT NULL,
+                      InmateID VARCHAR(10) NOT NULL,
+                      Crime VARCHAR(10) NOT NULL,
+                      Sentence VARCHAR(10) NOT NULL,
+                      TimeStart VARCHAR(15) NOT NULL,
+                      TimeEnd VARCHAR(15) NOT NULL,
+                      CONSTRAINT PRIMARY KEY (CaseID)
+);
+
+CREATE TABLE Prisoner(
+                         InmateID VARCHAR(10) NOT NULL,
+                         InmateName VARCHAR(30) NOT NULL,
+                         Gender VARCHAR(8) NOT NULL,
+                         DOB  VARCHAR(15),
+                         Marital VARCHAR(8),
+                         Security VARCHAR(8),
+                         CaseID VARCHAR(20),
+                         BuildNO VARCHAR(10),
+                         CONSTRAINT PRIMARY KEY (InmateID),
+                         CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                             ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Emergency(
+                          EmId VARCHAR(10) NOT NULL,
+                          InmateID VARCHAR(10) NOT NULL,
+                          Name VARCHAR(30),
+                          Relation VARCHAR(10),
+                          Contact INT(10),
+                          CONSTRAINT PRIMARY KEY (EmId),
+                          CONSTRAINT FOREIGN KEY (InmateID) REFERENCES Prisoner(InmateID)
+                              ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+CREATE TABLE Jailer(
+                       JailerID VARCHAR(10) NOT NULL,
+                       JailerName VARCHAR(30) NOT NULL,
+                       Gender VARCHAR(8) NOT NULL,
+                       DOB VARCHAR(20),
+                       Address VARCHAR(30),
+                       NicNo VARCHAR(12) NOT NULL,
+                       JailerRank VARCHAR(10) NOT NULL,
+                       CONSTRAINT PRIMARY KEY (JailerID)
+);
+
+CREATE TABLE Schedule(
+                         JailerID VARCHAR(10) NOT NULL,
+                         BuildNO VARCHAR(10) NOT NULL,
+                         Shift VARCHAR(10) NOT NULL,
+                         Weapons VARCHAR(15),
+                         CONSTRAINT FOREIGN KEY (JailerID) REFERENCES Jailer(JailerID)
+                             ON UPDATE CASCADE ON DELETE CASCADE,
+                         CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                             ON UPDATE CASCADE ON DELETE CASCADE
+
+);
+
+CREATE TABLE Visitor(
+                        NicNo VARCHAR(12) NOT NULL,
+                        InmateID VARCHAR(10) NOT NULL,
+                        Name VARCHAR(30) NOT NULL,
+                        Address VARCHAR(30) NOT NULL,
+                        Gender VARCHAR(10) NOT NULL,
+                        CONSTRAINT PRIMARY KEY (NicNo),
+                        CONSTRAINT FOREIGN KEY (InmateID) REFERENCES Prisoner(InmateID)
+
+);
+
+CREATE TABLE Staff(
+                      EmpID VARCHAR(10) NOT NULL,
+                      Name VARCHAR(30) NOT NULL,
+                      Gender VARCHAR(8) NOT NULL,
+                      DOB DATE,
+                      Address VARCHAR(30),
+                      Nic VARCHAR(12) NOT NULL,
+                      Position VARCHAR(10) NOT NULL,
+                      BuildNO VARCHAR(10),
+                      CONSTRAINT PRIMARY KEY (EmpID),
+                      CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                          ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+CREATE TABLE VisitorDetails(
+                               InmateId VARCHAR(10),
+                               NicNo VARCHAR(12),
+                               Date DATE,
+                               time VARCHAR(15),
+                               CONSTRAINT FOREIGN KEY (InmateId) REFERENCES Prisoner(InmateId)
+                                   ON UPDATE CASCADE ON DELETE CASCADE,
+                               CONSTRAINT FOREIGN KEY (NicNo) REFERENCES Visitor(NicNo)
+                                   ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE DATABASE Prison;
+USE Prison;
+
+
+CREATE TABLE Admin(
+                      UserName VARCHAR(15) NOT NULL,
+                      Password VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE Building(
+                         BuildNO VARCHAR(10) NOT NULL,
+                         Cells INT(5),
+                         Type VARCHAR(10) NOT NULL,
+                         Level VARCHAR(10) NOT NULL,
+                         CONSTRAINT PRIMARY KEY (BuildNO)
+
+);
+
+CREATE TABLE Cases(
+                      CaseID VARCHAR(10) NOT NULL,
+                      InmateID VARCHAR(10) NOT NULL,
+                      Crime VARCHAR(10) NOT NULL,
+                      Sentence VARCHAR(10) NOT NULL,
+                      TimeStart VARCHAR(15) NOT NULL,
+                      TimeEnd VARCHAR(15) NOT NULL,
+                      CONSTRAINT PRIMARY KEY (CaseID)
+);
+
+CREATE TABLE Prisoner(
+                         InmateID VARCHAR(10) NOT NULL,
+                         InmateName VARCHAR(30) NOT NULL,
+                         Gender VARCHAR(10) NOT NULL,
+                         DOB  VARCHAR(15),
+                         Marital VARCHAR(8),
+                         Security VARCHAR(8),
+                         CaseID VARCHAR(20),
+                         BuildNO VARCHAR(8),
+                         CONSTRAINT PRIMARY KEY (InmateID),
+                         CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                             ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Emergency(
+                          EmId VARCHAR(10) NOT NULL,
+                          InmateID VARCHAR(10) NOT NULL,
+                          Name VARCHAR(30),
+                          Relation VARCHAR(8),
+                          Contact INT(10),
+                          CONSTRAINT PRIMARY KEY (EmId),
+                          CONSTRAINT FOREIGN KEY (InmateID) REFERENCES Prisoner(InmateID)
+                              ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+CREATE TABLE Jailer(
+                       JailerID VARCHAR(10) NOT NULL,
+                       JailerName VARCHAR(30) NOT NULL,
+                       Gender VARCHAR(8) NOT NULL,
+                       DOB VARCHAR(20),
+                       Address VARCHAR(30),
+                       NicNo VARCHAR(12) NOT NULL,
+                       JailerRank VARCHAR(10) NOT NULL,
+                       CONSTRAINT PRIMARY KEY (JailerID)
+);
+
+CREATE TABLE Schedule(
+                         JailerID VARCHAR(10) NOT NULL,
+                         BuildNO VARCHAR(8) NOT NULL,
+                         Shift VARCHAR(8) NOT NULL,
+                         Weapons VARCHAR(15),
+                         CONSTRAINT FOREIGN KEY (JailerID) REFERENCES Jailer(JailerID)
+                             ON UPDATE CASCADE ON DELETE CASCADE,
+                         CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                             ON UPDATE CASCADE ON DELETE CASCADE
+
+);
+
+CREATE TABLE Visitor(
+                        NicNo VARCHAR(12) NOT NULL,
+                        InmateID VARCHAR(10) NOT NULL,
+                        Name VARCHAR(30) NOT NULL,
+                        Address VARCHAR(30) NOT NULL,
+                        Gender VARCHAR(8) NOT NULL,
+                        CONSTRAINT PRIMARY KEY (NicNo),
+                        CONSTRAINT FOREIGN KEY (InmateID) REFERENCES Prisoner(InmateID)
+
+);
+
+CREATE TABLE Staff(
+                      EmpID VARCHAR(10) NOT NULL,
+                      Name VARCHAR(30) NOT NULL,
+                      Gender VARCHAR(8) NOT NULL,
+                      DOB DATE,
+                      Address VARCHAR(30),
+                      Nic VARCHAR(12) NOT NULL,
+                      Position VARCHAR(10) NOT NULL,
+                      BuildNO VARCHAR(8),
+                      CONSTRAINT PRIMARY KEY (EmpID),
+                      CONSTRAINT FOREIGN KEY (BuildNO) REFERENCES Building(BuildNO)
+                          ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+CREATE TABLE VisitorDetails(
+                               InmateId VARCHAR(10),
+                               NicNo VARCHAR(12),
+                               Date DATE,
+                               time VARCHAR(15),
+                               CONSTRAINT FOREIGN KEY (InmateId) REFERENCES Prisoner(InmateId)
+                                   ON UPDATE CASCADE ON DELETE CASCADE,
+                               CONSTRAINT FOREIGN KEY (NicNo) REFERENCES Visitor(NicNo)
+                                   ON UPDATE CASCADE ON DELETE CASCADE
+);
+

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="jaileranchorpane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.prison.controller.JailermanageController">
+    <children>
+        <AnchorPane prefHeight="703.0" prefWidth="245.0" style="-fx-background-color: #34495E;">
+            <children>
+                <Pane layoutX="-1.0" layoutY="-3.0" prefHeight="50.0" prefWidth="246.0" style="-fx-background-color: #2C3E50;">
+                    <children>
+                        <Label layoutX="61.0" layoutY="8.0" onMouseClicked="#dashOnAction" prefHeight="37.0" prefWidth="147.0" text="Dashboard" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Black" size="24.0" />
+                            </font>
+                        </Label>
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="16.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/dashboard.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </Pane>
+                <JFXButton focusTraversable="false" layoutY="86.0" onAction="#jailerprimanage" prefHeight="39.0" prefWidth="246.0" ripplerFill="#00e5ff" style="-fx-background-color: #5D6D7E; -fx-background-radius: 50;" text="Prisoner manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton focusTraversable="false" layoutY="132.0" prefHeight="39.0" prefWidth="246.0" ripplerFill="#bf1f1f" style="-fx-background-color: #4e9796; -fx-background-radius: 50;" text="Jailer manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton focusTraversable="false" layoutY="178.0" onAction="#jailerstaffmanage" prefHeight="39.0" prefWidth="246.0" ripplerFill="#00e5ff" style="-fx-background-color: #5D6D7E; -fx-background-radius: 50;" text="Staff manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton focusTraversable="false" layoutY="224.0" onAction="#jailervisitmanage" prefHeight="39.0" prefWidth="246.0" ripplerFill="#00e5ff" style="-fx-background-color: #5D6D7E; -fx-background-radius: 50;" text="Visitor manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton focusTraversable="false" layoutY="270.0" onAction="#jailercellmanage" prefHeight="39.0" prefWidth="246.0" ripplerFill="#00e5ff" style="-fx-background-color: #5D6D7E; -fx-background-radius: 50;" text="Prison cells manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton focusTraversable="false" layoutY="316.0" onAction="#jailercasemanage" prefHeight="39.0" prefWidth="246.0" ripplerFill="#00e5ff" style="-fx-background-color: #5D6D7E; -fx-background-radius: 50;" text="Cases manage" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="246.0" prefHeight="702.0" prefWidth="1054.0">
+            <children>
+                <Pane prefHeight="48.0" prefWidth="1054.0" style="-fx-background-color: #EBEDEF;">
+                    <children>
+                        <Label layoutX="28.0" layoutY="3.0" prefHeight="41.0" prefWidth="196.0" text="Jailer manage" textFill="#195372">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="1007.0" layoutY="8.0" onMouseClicked="#adminmanage" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/settings_FILL0_wght400_GRAD0_opsz48.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton focusTraversable="false" layoutX="818.0" layoutY="12.0" onAction="#logout" prefHeight="25.0" prefWidth="57.0" ripplerFill="#83f5ff" style="-fx-background-color: #00A0B2;" text="Logout" textFill="WHITE" />
+                        <ImageView fitHeight="48.0" fitWidth="33.0" layoutX="886.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/user.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="925.0" layoutY="11.0" prefHeight="25.0" prefWidth="89.0" text="Administrator" />
+                        <Label fx:id="lblDate" layoutX="592.0" layoutY="13.0" prefHeight="25.0" prefWidth="86.0" textFill="#1d6e9a">
+                            <font>
+                                <Font name="Arial Black" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="531.0" layoutY="14.0" prefHeight="12.0" prefWidth="62.0" text="Today -" textFill="#195372">
+                            <font>
+                                <Font name="Arial Black" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="925.0" layoutY="11.0" prefHeight="25.0" prefWidth="89.0" text="Administrator" />
+                        <Label fx:id="lbltime" layoutX="741.0" layoutY="12.0" prefHeight="25.0" prefWidth="70.0" textFill="#1d6e9a">
+                            <font>
+                                <Font name="Arial Black" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="687.0" layoutY="14.0" prefHeight="22.0" prefWidth="54.0" text="Time -" textFill="#195372">
+                            <font>
+                                <Font name="Arial Black" size="14.0" />
+                            </font>
+                  </Label>
+                    </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="67.0" prefHeight="368.0" prefWidth="613.0" style="-fx-background-color: #EBEDEF;">
+               <children>
+                  <Label layoutX="20.0" layoutY="21.0" prefHeight="28.0" prefWidth="95.0" text="Jailer ID" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="63.0" prefHeight="23.0" prefWidth="95.0" text="Name" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="108.0" prefHeight="18.0" prefWidth="86.0" text="Gender" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="147.0" prefHeight="19.0" prefWidth="87.0" text="Birthday" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="190.0" prefHeight="17.0" prefWidth="95.0" text="Address" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="233.0" prefHeight="15.0" prefWidth="98.0" text="NIC No" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="270.0" prefHeight="19.0" prefWidth="98.0" text="Rank" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtjlid" layoutX="141.0" layoutY="24.0" onAction="#jlIdOnAction" prefHeight="17.0" prefWidth="145.0" promptText="Jailer ID" />
+                  <TextField fx:id="txtname" layoutX="142.0" layoutY="64.0" onAction="#nameOnAction" prefHeight="23.0" prefWidth="144.0" promptText="Name" />
+                  <TextField fx:id="txtaddress" layoutX="140.0" layoutY="188.0" onAction="#addressOnAction" prefHeight="23.0" prefWidth="146.0" promptText="Address" />
+                  <TextField fx:id="txtnic" layoutX="140.0" layoutY="230.0" onAction="#nicOnAction" prefHeight="16.0" prefWidth="145.0" promptText="NIC No" />
+                  <TextField fx:id="txtrank" layoutX="140.0" layoutY="269.0" onAction="#rankOnAction" prefHeight="20.0" prefWidth="145.0" promptText="Rank" />
+                  <DatePicker fx:id="txtbirth" layoutX="142.0" layoutY="145.0" onAction="#BirthOnAction" prefHeight="25.0" prefWidth="144.0" promptText="Select Date" />
+                  <Label fx:id="lblsearch" layoutX="45.0" layoutY="295.0" opacity="0.75" prefHeight="67.0" prefWidth="233.0" textAlignment="CENTER" textFill="#a80000">
+                     <font>
+                        <Font name="Bodoni MT" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="txtgender" layoutX="141.0" layoutY="104.0" onAction="#genderOnAction" prefHeight="25.0" prefWidth="145.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="650.0" layoutY="68.0" prefHeight="368.0" prefWidth="384.0" style="-fx-background-color: #EBEDEF;">
+               <children>
+                  <Label layoutX="17.0" layoutY="7.0" opacity="0.9" prefHeight="28.0" prefWidth="217.0" text="Jailer Schedule Manage">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="50.0" prefHeight="28.0" prefWidth="105.0" text="Jailer ID" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="92.0" prefHeight="22.0" prefWidth="98.0" text="Building No" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="131.0" prefHeight="21.0" prefWidth="96.0" text="Shift Length" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="170.0" prefHeight="24.0" prefWidth="101.0" text="Weapons" textFill="#403c3c">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtbulno" layoutX="142.0" layoutY="92.0" onAction="#buildOnAction" prefHeight="22.0" prefWidth="142.0" promptText="Building No" />
+                  <TextField fx:id="txtshiflen" layoutX="142.0" layoutY="132.0" onAction="#shiftOnAction" prefHeight="18.0" prefWidth="142.0" promptText="Shift Length" />
+                  <TextField fx:id="txtweptype" layoutX="142.0" layoutY="168.0" onAction="#weaponOnAction" prefHeight="23.0" prefWidth="143.0" promptText="Weapon Type" />
+                  <TextField fx:id="txtjailerid" layoutX="142.0" layoutY="52.0" onAction="#shidOnAction" prefHeight="22.0" prefWidth="143.0" promptText="Jailer ID" />
+                  <JFXButton layoutX="317.0" layoutY="334.0" onAction="#shSave" prefHeight="25.0" prefWidth="58.0" ripplerFill="#004ea1" style="-fx-background-color: #99b6d3;" text="Save" />
+                  <JFXButton layoutX="250.0" layoutY="334.0" onAction="#shDelete" prefHeight="25.0" prefWidth="55.0" ripplerFill="#a80000" style="-fx-background-color: #FFB3B3;" text="Delete" textFill="#a80000" />
+                  <JFXButton layoutX="181.0" layoutY="334.0" onAction="#shSearch" prefHeight="25.0" prefWidth="56.0" ripplerFill="#424b4f" style="-fx-background-color: #95A9B0;" text="Search" textFill="#112228" />
+                  <JFXButton layoutX="113.0" layoutY="334.0" onAction="#shUpdate" prefHeight="25.0" prefWidth="57.0" ripplerFill="#118300" style="-fx-background-color: #8FB280;" text="Update" textFill="#1a2f1c" />
+                  <JFXButton layoutX="52.0" layoutY="334.0" onAction="#shClear" prefHeight="19.0" prefWidth="51.0" ripplerFill="#4a4a4a" style="-fx-background-color: #A0A1A3;" text="Clear" />
+                  <Label fx:id="shlblsearch" layoutX="122.0" layoutY="247.0" opacity="0.75" prefHeight="67.0" prefWidth="233.0" textAlignment="CENTER" textFill="#a80000">
+                     <font>
+                        <Font name="Bodoni MT" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="tableJailer" layoutX="20.0" layoutY="471.0" prefHeight="214.0" prefWidth="613.0">
+               <columns>
+                  <TableColumn fx:id="tablejid" prefWidth="76.0" text="Jailer ID" />
+                  <TableColumn fx:id="tablename" prefWidth="112.0" text="Name" />
+                  <TableColumn fx:id="tablegender" prefWidth="63.0" text="Gender" />
+                  <TableColumn fx:id="tablebirthday" prefWidth="106.0" text="Birthday" />
+                  <TableColumn fx:id="tableaddress" minWidth="0.0" prefWidth="81.0" text="Address" />
+                  <TableColumn fx:id="tablenic" prefWidth="108.0" text="NIC No" />
+                  <TableColumn fx:id="tablerank" prefWidth="66.0" text="Rank" />
+               </columns>
+            </TableView>
+            <Label layoutX="254.0" layoutY="438.0" opacity="0.75" prefHeight="28.0" prefWidth="146.0" text="Jailer Details" textFill="#195372">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableJailerSchedule" layoutX="652.0" layoutY="471.0" prefHeight="214.0" prefWidth="384.0">
+               <columns>
+                  <TableColumn fx:id="tableShId" prefWidth="89.0" text="Jailer ID" />
+                  <TableColumn fx:id="tableShBlNo" prefWidth="90.0" text="Building No" />
+                  <TableColumn fx:id="tableShShift" prefWidth="93.0" text="Shift Length" />
+                  <TableColumn fx:id="tableShWeapon" prefWidth="111.0" text="Weapons" />
+               </columns>
+            </TableView>
+            <Label layoutX="726.0" layoutY="438.0" opacity="0.75" prefHeight="28.0" prefWidth="236.0" text="Jailer Schedule Details" textFill="#195372">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="567.0" layoutY="401.0" onAction="#btnSave" prefHeight="25.0" prefWidth="58.0" ripplerFill="#004ea1" style="-fx-background-color: #99b6d3;" text="Save" />
+            <JFXButton layoutX="500.0" layoutY="401.0" onAction="#btnDelete" prefHeight="25.0" prefWidth="55.0" ripplerFill="#a80000" style="-fx-background-color: #FFB3B3;" text="Delete" textFill="#a80000" />
+            <JFXButton layoutX="431.0" layoutY="401.0" onAction="#btnSearch" prefHeight="25.0" prefWidth="56.0" ripplerFill="#424b4f" style="-fx-background-color: #95A9B0;" text="Search" textFill="#112228" />
+            <JFXButton layoutX="363.0" layoutY="401.0" onAction="#btnUpdate" prefHeight="25.0" prefWidth="57.0" ripplerFill="#118300" style="-fx-background-color: #8FB280;" text="Update" textFill="#1a2f1c" />
+            <JFXButton layoutX="301.0" layoutY="401.0" onAction="#btnClear" prefHeight="19.0" prefWidth="51.0" ripplerFill="#4a4a4a" style="-fx-background-color: #A0A1A3;" text="Clear" />
+            <ImageView fx:id="panePhoto" fitHeight="227.0" fitWidth="296.0" layoutX="321.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton fx:id="btnCapture" layoutX="536.0" layoutY="365.0" onAction="#onCapture" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4a4a4a" style="-fx-background-color: #158392;" text="Open Camera" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="logancharpane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.prison.controller.LoginformController">
+   <children>
+      <ImageView disable="true" fitHeight="556.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@image/bigstock-Rows-of-prison-cells-prison-i-115203026.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="158.0" fitWidth="119.0" layoutX="300.0" layoutY="67.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/emblem-of-sri-lanka-government-of-sri-lanka-national-emblem-sri-lankan-moors-emblem-of-sri-lanka-a2931f2729e7297a808f5ac1cbe3fce7.png" />
+         </image>
+      </ImageView>
+      <Button blendMode="OVERLAY" cache="true" focusTraversable="false" layoutX="331.0" layoutY="319.0" mnemonicParsing="false" onAction="#btnlogOnaction" opacity="0.85" prefHeight="25.0" prefWidth="51.0" text="Login" />
+      <TextField fx:id="username" blendMode="DIFFERENCE" focusTraversable="false" layoutX="256.0" layoutY="231.0" onAction="#usernameOnAction" opacity="0.7" prefHeight="25.0" prefWidth="202.0" promptText=" User name" />
+      <PasswordField fx:id="password" blendMode="DIFFERENCE" focusTraversable="false" layoutX="256.0" layoutY="275.0" onAction="#passwordOnAction" opacity="0.7" prefHeight="25.0" prefWidth="202.0" promptText="Password" />
+   </children>
+</AnchorPane>
